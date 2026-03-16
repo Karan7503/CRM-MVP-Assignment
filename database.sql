@@ -1,0 +1,29 @@
+CREATE DATABASE crm;
+
+USE crm;
+
+CREATE TABLE users (
+user_id INT AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(50),
+email VARCHAR(50),
+role VARCHAR(20)
+);
+
+CREATE TABLE leads (
+lead_id INT AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(50),
+phone VARCHAR(15),
+email VARCHAR(50),
+source VARCHAR(50),
+status VARCHAR(50),
+assigned_to INT,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE visits (
+visit_id INT AUTO_INCREMENT PRIMARY KEY,
+lead_id INT,
+agent_id INT,
+visit_date DATE,
+notes TEXT
+);
